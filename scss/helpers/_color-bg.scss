@@ -1,0 +1,8 @@
+@each $color, $value in $theme-colors {
+  .text-bg-#{$color} {
+    color: color-contrast($value)
+      if($enable-important-utilities, !important, null);
+    background-color: RGBA(var(--#{$color}-rgb), var(--bg-opacity, 1))
+      if($enable-important-utilities, !important, null);
+  }
+}

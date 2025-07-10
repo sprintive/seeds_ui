@@ -1,0 +1,71 @@
+body {
+  &.seeds-toolbar {
+    .header {
+      left: 60px;
+    }
+  }
+}
+.header {
+  background-color: $gray-100;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+}
+#navbar-top {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.navigation-bar {
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbar-toggler {
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+  }
+}
+.collapse {
+  display: none;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.collapse.show {
+  display: block;
+}
+
+.navbar-toggler.collapsed {
+  transform: rotate(0deg);
+}
+
+.block-system-branding-block {
+  margin-right: 32px;
+  img {
+    max-width: 70px;
+  }
+}
+
+.menu--main {
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    li {
+      padding: 0 8px;
+      a {
+        color: $black;
+        text-decoration: none;
+        @include font-size(18px);
+      }
+    }
+  }
+}

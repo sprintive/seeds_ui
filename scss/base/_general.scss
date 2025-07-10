@@ -1,0 +1,53 @@
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  white-space: nowrap;
+}
+
+.pager {
+  .pager__items {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    .pager__item {
+      position: relative;
+      display: block;
+      padding: 8px;
+      @include font-size(18px);
+      color: $primary;
+      background-color: $white;
+      border: 1px solid $gray-300;
+
+      &:hover {
+        z-index: 2;
+      }
+
+      &:focus {
+        z-index: 3;
+      }
+
+      &.pager__item--active,
+      .pager__item--active > & {
+        z-index: 3;
+        color: $white;
+        background-color: $primary;
+      }
+
+      &.disabled,
+      .disabled > & {
+        color: rgba($gray-900, 0.75);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+img {
+  @include img-fluid();
+}

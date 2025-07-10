@@ -1,0 +1,58 @@
+{
+  "name": "seed-ui",
+  "version": "1.0.0",
+  "description": "Seed UI is a unified framework for building user interfaces, Sponsored by Sprintive",
+  "private": true,
+  "scripts": {
+    "css": "npm-run-all css-compile css-prefix css-rtl css-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css scss/:dist/css/",
+    "css-rtl": "cross-env NODE_ENV=RTL postcss --config postcss.config.mjs --dir \"dist/css\" --ext \".rtl.css\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*.rtl.css\"",
+    "css-minify": "npm-run-all --aggregate-output --parallel css-minify-*",
+    "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\" \"!dist/css/*rtl*.css\"",
+    "css-minify-rtl": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/css/ --batch --batch-suffix \".min\" \"dist/css/*rtl.css\" \"!dist/css/*.min.css\"",
+    "css-prefix": "npm-run-all --aggregate-output --parallel css-prefix-*",
+    "css-prefix-main": "postcss --config build/postcss.config.mjs --replace \"dist/css/*.css\" \"!dist/css/*.rtl*.css\" \"!dist/css/*.min.css\"",
+    "watch": "npm-run-all --parallel watch-*",
+    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm-run-all css-compile css-prefix\"",
+    "watch-css-dist": "nodemon --watch dist/css/ --ext css --ignore \"dist/css/*.rtl.*\" --exec \"npm run css-rtl\""
+  },
+  "browserslist": [
+    "last 2 Chrome major versions",
+    "last 2 Firefox major versions",
+    "last 2 Safari major versions",
+    "last 2 Edge major versions",
+    "last 2 Opera versions",
+    "last 2 iOS major versions",
+    "last 1 ChromeAndroid version",
+    "last 1 Samsung version",
+    "Firefox ESR"
+  ],
+  "keywords": ["seed-ui", "seed", "ui", "framework", "sprintive"],
+  "author": "Sprintive",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "clean-css-cli": "^5.6.3",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.49",
+    "sass": "^1.83.4",
+    "rfs": "^10.0.0",
+    "vite": "^6.0.1",
+    "nodemon": "^3.1.9",
+    "npm-run-all2": "^6.1.2",
+    "postcss-cli": "^11.0.0",
+    "rtlcss": "^4.1.1"
+  },
+  "dependencies": {
+    "cssnano": "^6.1.2",
+    "postcss-cli": "^11.0.0",
+    "postcss-header": "^3.0.3",
+    "postcss-minify": "^1.1.0",
+    "postcss-mixins": "^10.0.0",
+    "postcss-preset-env": "^9.5.2",
+    "postcss-url": "^10.1.3",
+    "postcss-utilities": "^0.8.4",
+    "rfs": "^10.0.0",
+    "vite": "^6.0.6"
+  }
+}
