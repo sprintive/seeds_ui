@@ -1,0 +1,121 @@
+.menu-container-wrapper {
+  position: relative;
+  &.dropdown-relative {
+    button {
+      width: 100%;
+      font-weight: 600;
+    }
+    .menu-container {
+      .dropdown-nav {
+        .menu-item {
+          width: 100%;
+          margin: 0;
+          a {
+            font-size: 14px;
+            border-radius: 8px;
+            padding: 10px 16px;
+
+            &.active,
+            &:hover {
+              &::after {
+                content: '';
+                display: block;
+                width: 6px;
+                height: 100%;
+                border-radius: 8px;
+                background-color: $primary;
+                position: absolute;
+                left: 0;
+                top: 15%;
+                height: 70%;
+                margin: 0;
+              }
+            }
+
+            &.active {
+              background-color: #e5e7eb;
+              color: $primary;
+              font-weight: 600;
+            }
+            &:hover {
+              background-color: #f3f4f6;
+              &::after {
+                background-color: #9da4ae;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.menu-container {
+  .menu-container-wrapper:not(.dropdown-relative) & {
+    border: 1px solid #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    border-radius: 8px;
+    &.drop-down {
+      overflow: auto;
+      overscroll-behavior: contain;
+      &[data-active='false'] {
+        opacity: 0;
+        pointer-events: none;
+      }
+      background-color: #ffffff;
+      position: fixed;
+      z-index: 100;
+      box-shadow: (
+  0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+  0px 8px 8px -4px rgba(16, 24, 40, 0.03)
+);
+    }
+  }
+
+  .group-title {
+    @include font-size(16px);
+    padding: 8px;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  ul {
+    padding: 8px;
+
+    list-style: none;
+    li > div,
+    .label-container {
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li {
+      @include font-size(16px);
+      cursor: pointer;
+      transition: background-color 300ms ease;
+      a {
+        color: inherit;
+        text-decoration: none;
+        padding: 8px;
+        display: block;
+        &:hover {
+          background-color: #f3f4f6;
+        }
+        &:active {
+          background-color: #e5e7eb;
+        }
+        &.active {
+          @include icon($icon-sucess, 20px, 'inherit', '::after', 8px);
+        }
+      }
+    }
+    border-bottom: 1px solid #cbd5e1;
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}

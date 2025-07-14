@@ -1,0 +1,42 @@
+.jsonapi-link {
+    width: 70px;
+    height: 70px;
+    border: 2px solid $primary;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg,path,rect {
+        fill: $primary;
+    }
+    svg {
+        width: 100%;
+        margin-left: 2px;
+    }
+    box-shadow: (
+        0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+        0px 2px 4px -2px rgba(16, 24, 40, 0.06)
+      );
+    transform: scale(0.9) translateZ(0);
+    transition: transform 0.1s;
+    // Fix blur.
+    backface-visibility: hidden;
+    &:hover {
+        transform: scale(1.0);
+    }
+}
+
+.jsonapi-link--landing {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+}
+
+.jsonapi-link--block {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    visibility: hidden;
+}

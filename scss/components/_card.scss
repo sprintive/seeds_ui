@@ -1,0 +1,83 @@
+.card-default {
+    overflow: hidden;
+    position: relative;
+    &:hover {
+      .image-scale {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+    .card-default-image {
+      img {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 500ms;
+      }
+    }
+    .card-content {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+}
+  
+.teaser {
+    border: 1px solid #e4e7eb;
+    background-color: #ffffff;
+    &:hover {
+      .image-scale {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+    &.overflow-hidden {
+      overflow: hidden;
+    }
+  
+    .teaser-img {
+      &.image-scale {
+        overflow: hidden;
+      }
+      img {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 500ms;
+      }
+    }
+}
+  
+.right-teaser,
+.left-teaser {
+  border: 1px solid #e4e7eb;
+  background-color: #ffffff;
+  &:hover {
+    .image-scale {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+
+  .right-teaser-img,
+  .left-teaser-img {
+    &.image-scale {
+      overflow: hidden;
+    }
+    img {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 500ms;
+    }
+  }
+}

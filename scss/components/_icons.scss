@@ -1,0 +1,48 @@
+// General styling for iconmon (Saud) icons
+[class^='icon-'],
+[class*=' icon-'] {
+  &::before,
+  &::after {
+    font-size: 22px;
+    margin: 0 6px;
+    font-weight: 500;
+  }
+  &.reverse {
+    &::after,
+    &::before {
+      rotate: 0deg;
+      [dir='rtl'] & {
+        rotate: 180deg;
+      }
+      display: inline-block;
+    }
+  }
+}
+
+.icon {
+  border-radius: 100%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+.icon-neutral {
+  background-color: #f9fafb;
+}
+
+.icon-primary {
+  background: $primary;
+  color: #ffffff;
+}
+
+.icon-sm {
+  &::before,
+  &::after {
+    font-size: 14px;
+  }
+}
+.icon-md {
+  &::before,
+  &::after {
+    font-size: 18px;
+  }
+}

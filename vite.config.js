@@ -25,6 +25,7 @@ export default defineConfig({
         main: "index.html",
         font: "scss/font.scss",
         style: "scss/style.scss",
+        components: "scss/components.scss",
       },
       output: {
         assetFileNames: "[name][extname]",

@@ -1,0 +1,84 @@
+.accordion {
+  .accordion-item {
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 300ms ease;
+      border-top: 1px solid #d2d6db;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      font-size: 16px;
+      font-weight: 700;
+      * {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      @include icon($icon-dropdown-input, 20px, 'inherit', '::before', 0px);
+
+      &:hover {
+        background-color: #f3f4f6;
+      }
+      &:active {
+        background-color: #d2d6db;
+      }
+     
+    }
+    .accordion-content {
+      display: none;
+      overflow: hidden;
+      max-height: 0;
+      padding: 16px;
+      padding-inline-end: 32px;
+    }
+    &.leading {
+      .accordion-header {
+        justify-content: unset;
+        flex-direction: row;
+      }
+      .accordion-content {
+        padding-inline-end: 16px;
+        padding-inline-start: 48px;
+      }
+    }
+    &.active {
+      .accordion-header {
+        &::before {
+          transition: rotate 300ms ease;
+          transform: rotate(180deg);
+        }
+      }
+      .accordion-content {
+        display: block;
+      }
+    }
+    &.disabled {
+      .accordion-header {
+        pointer-events: none;
+        color: #9da4ae;
+        @include icon($icon-dropdown-input, 20px, 'inherit', '::before', 0px);
+      }
+    }
+  }
+}
+
+$spacer: (
+  sm: (
+    padding: 8px 16px,
+  ),
+  md: (
+    padding: 12px 16px,
+  ),
+  lg: (
+    padding: 16px 16px,
+  ),
+);
+
+@each $key, $value in $spacer {
+  .accordion-#{$key} {
+    .accordion-header {
+      padding: map-get($value, padding);
+      gap: 16px;
+    }
+  }
+}

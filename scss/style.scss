@@ -2,6 +2,10 @@
 @import "variables";
 @import "mixins";
 @import "utilities";
+
+@import "../icons/style";
+@import "../icons/fixes";
+
 // Helpers
 @import "helpers/color-bg";
 @import "helpers/colored-links";
@@ -14,6 +18,7 @@
 @import "base/general";
 @import "base/layout";
 @import "theme/print";
+@import "components";
 
 // Utilities
 @import "utilities/api";

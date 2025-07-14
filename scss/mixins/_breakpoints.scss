@@ -132,3 +132,38 @@
     }
   }
 }
+
+// Media for mobile devices (up to the 'md' breakpoint).
+@mixin on_mobile {
+  @include media-breakpoint-max(md) {
+    @content;
+  }
+}
+
+// Media for desktop devices (from the 'lg' breakpoint and up).
+@mixin on_desktop {
+  @include media-breakpoint-min(xl) {
+    @content;
+  }
+}
+
+// Media for non-desktop devices (up to the 'lg' breakpoint).
+@mixin not_on_desktop {
+  @include media-breakpoint-max(xl) {
+    @content;
+  }
+}
+
+// Media for tablet devices (between the 'sm' and 'lg' breakpoints).
+@mixin on_tablet {
+  @include media-breakpoint-between(md, lg) {
+    @content;
+  }
+}
+
+// Media for non-mobile devices (from the 'md' breakpoint and up).
+@mixin not_on_mobile {
+  @include media-breakpoint-min(md) {
+    @content;
+  }
+}

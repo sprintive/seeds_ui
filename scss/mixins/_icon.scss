@@ -1,0 +1,39 @@
+@mixin icon(
+  $name,
+  $size: 22px,
+  $color: inherit,
+  $el: '::before',
+  $gap: 4px,
+  $reverse: 'false',
+  $reverse-rtl: 'false'
+) {
+  display: flex;
+  gap: $gap;
+  align-items: baseline;
+  &#{$el} {
+    content: $name;
+    font-size: $size;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'saud';
+    font-weight: 500;
+    color: $color;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    transition: 0.3s;
+    //This when initialize the icon
+    @if $reverse == 'true' {
+      transform: rotate(180deg);
+    }
+    @if $reverse-rtl == 'true' {
+      [dir='rtl'] & {
+        transform: rotate(180deg);
+      }
+    }
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
