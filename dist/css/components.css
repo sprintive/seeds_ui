@@ -1,7 +1,7 @@
 [class^=icon-],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "seed-ui";
+  font-family: "seeds-ui";
   speak: never;
   font-style: normal;
   font-weight: 500;
@@ -362,9 +362,9 @@
 }
 
 @font-face {
-  font-family: "seed-ui";
-  src: url("fonts/seed-ui.eot"); /* IE9 Compat Modes */
-  src: url("fonts/seed-ui.eot?#iefix") format("embedded-opentype"), url("fonts/seed-ui.woff") format("woff"), url("fonts/seed-ui.svg?#seed-ui") format("svg"), url("fonts/seed-ui.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-family: "seeds-ui";
+  src: url("fonts/seeds-ui.eot"); /* IE9 Compat Modes */
+  src: url("fonts/seeds-ui.eot?#iefix") format("embedded-opentype"), url("fonts/seeds-ui.woff") format("woff"), url("fonts/seeds-ui.svg?#seed-ui") format("svg"), url("fonts/seeds-ui.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: 500;
   font-style: normal;
   font-display: swap; /* Improves loading performance */

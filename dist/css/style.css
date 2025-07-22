@@ -1,7 +1,7 @@
 [class^=icon-],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "seed-ui";
+  font-family: "seeds-ui";
   speak: never;
   font-style: normal;
   font-weight: 500;
@@ -362,9 +362,9 @@
 }
 
 @font-face {
-  font-family: "seed-ui";
-  src: url("fonts/seed-ui.eot"); /* IE9 Compat Modes */
-  src: url("fonts/seed-ui.eot?#iefix") format("embedded-opentype"), url("fonts/seed-ui.woff") format("woff"), url("fonts/seed-ui.svg?#seed-ui") format("svg"), url("fonts/seed-ui.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-family: "seeds-ui";
+  src: url("fonts/seeds-ui.eot"); /* IE9 Compat Modes */
+  src: url("fonts/seeds-ui.eot?#iefix") format("embedded-opentype"), url("fonts/seeds-ui.woff") format("woff"), url("fonts/seeds-ui.svg?#seed-ui") format("svg"), url("fonts/seeds-ui.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: 500;
   font-style: normal;
   font-display: swap; /* Improves loading performance */
@@ -2227,7 +2227,7 @@ body.seeds-toolbar .header {
 [class^=icon-],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "seed-ui";
+  font-family: "seeds-ui";
   speak: never;
   font-style: normal;
   font-weight: 500;
@@ -2588,9 +2588,9 @@ body.seeds-toolbar .header {
 }
 
 @font-face {
-  font-family: "seed-ui";
-  src: url("fonts/seed-ui.eot"); /* IE9 Compat Modes */
-  src: url("fonts/seed-ui.eot?#iefix") format("embedded-opentype"), url("fonts/seed-ui.woff") format("woff"), url("fonts/seed-ui.svg?#seed-ui") format("svg"), url("fonts/seed-ui.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-family: "seeds-ui";
+  src: url("fonts/seeds-ui.eot"); /* IE9 Compat Modes */
+  src: url("fonts/seeds-ui.eot?#iefix") format("embedded-opentype"), url("fonts/seeds-ui.woff") format("woff"), url("fonts/seeds-ui.svg?#seed-ui") format("svg"), url("fonts/seeds-ui.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: 500;
   font-style: normal;
   font-display: swap; /* Improves loading performance */
@@ -4125,6 +4125,275 @@ dialog[open] {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+}
+
+.site-branding__inner .site-branding__logo {
+  margin-right: 24px;
+}
+@media (max-width: 767.98px) {
+  .site-branding__inner .site-branding__logo {
+    margin: 0 12px;
+  }
+}
+.site-branding__inner .site-branding__logo img {
+  width: 100%;
+  max-height: 57px;
+}
+
+.video-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.video-wrapper video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  width: auto;
+  margin: auto;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.link-external {
+  display: flex;
+  gap: 0px;
+  align-items: baseline;
+}
+.link-external::after {
+  content: "\e921";
+  font-size: 14px;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "saud";
+  font-weight: 500;
+  color: "inherit";
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  transition: 0.3s;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.link-external::after {
+  margin-left: 4px;
+}
+
+.block-wrapper {
+  max-width: 100%;
+  position: relative;
+}
+.block-wrapper:hover .jsonapi-link {
+  visibility: visible;
+}
+
+/* Search block */
+.stelios-search-block .stelios-dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0 0 16px 16px;
+  padding: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.stelios-search-block .stelios-dropdown-content .stelios-close-button {
+  margin-bottom: 32px;
+}
+.stelios-search-block .stelios-dropdown-content.slide-down {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+}
+.stelios-search-block .stelios-dropdown-content.hidden {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.stelios-image-block {
+  margin: 0 8px;
+}
+.stelios-image-block img {
+  width: 100%;
+  max-height: 57px;
+}
+
+.stelios-language-block .dropdown-wrapper,
+.menu-display-block--dropdown .dropdown-wrapper {
+  cursor: pointer;
+}
+.stelios-language-block .dropdown-wrapper .dropdown-input,
+.menu-display-block--dropdown .dropdown-wrapper .dropdown-input {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 85px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.stelios-language-block .dropdown-wrapper .dropdown-input:focus,
+.menu-display-block--dropdown .dropdown-wrapper .dropdown-input:focus {
+  outline: none;
+}
+.stelios-language-block .dropdown-wrapper .dropdown-list,
+.menu-display-block--dropdown .dropdown-wrapper .dropdown-list {
+  width: fit-content;
+}
+.stelios-language-block .dropdown-wrapper .dropdown-list .dropdown-item,
+.menu-display-block--dropdown .dropdown-wrapper .dropdown-list .dropdown-item {
+  padding: 0;
+}
+.stelios-language-block .dropdown-wrapper .dropdown-list .dropdown-item a,
+.menu-display-block--dropdown .dropdown-wrapper .dropdown-list .dropdown-item a {
+  padding: 5px 1.25rem;
+  display: block;
+}
+
+.stelios-search-form-landing {
+  position: relative;
+}
+.stelios-search-form-landing .dropdown-wrapper {
+  position: absolute;
+  top: calc(100% + 50px);
+  right: 0;
+}
+.stelios-search-form-landing .dropdown-wrapper.input-container {
+  padding: 0;
+}
+.stelios-search-form-landing .dropdown-wrapper .dropdown-select {
+  padding: 0;
+}
+@media (max-width: 767.98px) {
+  .stelios-search-form-landing .dropdown-wrapper {
+    position: relative;
+    top: 0;
+  }
+}
+.stelios-search-form-landing .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 50px);
+  right: 210px;
+}
+.stelios-search-form-landing .dropdown-menu button {
+  min-height: 44px;
+}
+.stelios-search-form-landing .dropdown-menu.dropdown-menu-sort {
+  right: 0;
+}
+@media (max-width: 1279.98px) {
+  .stelios-search-form-landing .dropdown-menu {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: 16px;
+  }
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+.dropdown-wrapper.active .select-btn::before {
+  transform: rotate(180deg);
+}
+.dropdown-wrapper .dropdown-list {
+  display: none;
+  z-index: 10;
+  list-style: none;
+  overflow: auto;
+  position: absolute;
+  top: 100%;
+  margin-top: 10px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+  width: 100%;
+  max-height: 320px;
+}
+.dropdown-wrapper .dropdown-select {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-wrapper .dropdown-item {
+  padding: 5px 16px;
+  margin: 0;
+  cursor: pointer;
+}
+.dropdown-wrapper .dropdown-item:hover {
+  background-color: #f9fafb;
+}
+.dropdown-wrapper .dropdown-item.no-options {
+  cursor: text;
+}
+.dropdown-wrapper .dropdown-item.active {
+  justify-content: space-between;
+  display: flex;
+  gap: 0px;
+  align-items: baseline;
+}
+.dropdown-wrapper .dropdown-item.active::after {
+  content: "\e909";
+  font-size: 16px;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "saud";
+  font-weight: 500;
+  color: "inherit";
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  transition: 0.3s;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dropdown-wrapper .select-btn {
+  display: flex;
+  gap: 0px;
+  align-items: baseline;
+}
+.dropdown-wrapper .select-btn::before {
+  content: "\e915";
+  font-size: 20px;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "saud";
+  font-weight: 500;
+  color: "inherit";
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  transition: 0.3s;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dropdown-wrapper .select-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  display: block;
+}
+.dropdown-wrapper select {
+  display: none;
 }
 
 .align-baseline {
