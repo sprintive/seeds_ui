@@ -26,6 +26,7 @@ export default defineConfig({
         font: "scss/font.scss",
         style: "scss/style.scss",
         components: "scss/components.scss",
+        stelios: "scss/stelios.scss",
       },
       output: {
         assetFileNames: "[name][extname]",
