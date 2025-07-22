@@ -1,0 +1,74 @@
+// Base element styles
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'metropolis', sans-serif;
+  direction: ltr;
+  text-align: left;
+  color: $black;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  color: #14573a;
+  font-weight: 700;
+
+  .hljs-tag {
+    color: #14573a;
+    font-weight: 500;
+
+    .hljs-name {
+      color: #d92d20;
+    }
+
+    .hljs-attr,
+    .hljs-string {
+      color: #14573a;
+    }
+  }
+}
+
+// Typography elements
+p {
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+// List elements
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+::marker {
+  color: inherit;
+}
+
+b {
+  @extend .font-semibold;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0 1em;
+  border-left: 4px solid #25935f;
+  color: #1f2a37;
+  font-style: italic;
+}
+
+figcaption {
+  @extend .text-sm;
+  color: #25935f;
+}
