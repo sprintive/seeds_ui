@@ -14,7 +14,7 @@
         font-size: 16px;
         font-weight: 700;
       }
-      @include icon($icon-dropdown-input, 20px, 'inherit', '::before', 0px);
+      @include icon($icon-dropdown-input, 20px, inherit, '::before', 0px);
 
       &:hover {
         background-color: #f3f4f6;
@@ -56,7 +56,7 @@
       .accordion-header {
         pointer-events: none;
         color: #9da4ae;
-        @include icon($icon-dropdown-input, 20px, 'inherit', '::before', 0px);
+        @include icon($icon-dropdown-input, 20px, inherit, '::before', 0px);
       }
     }
   }

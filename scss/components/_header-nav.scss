@@ -1,0 +1,94 @@
+$nav-item: (
+  default: (
+    color: $black,
+    border-color: $white,
+    background: $white,
+    active: (
+      color: $black,
+      border-color: $blue,
+      background: transparent,
+    ),
+    hover: (
+      border-color: $blue,
+      background: transparent,
+    ),
+    active-hover: (
+      border-color: $blue,
+      background: transparent,
+    ),
+    active-pressed: (
+      border-color: $blue,
+      background: transparent,
+    ),
+    active-focused: (
+      border-color: $blue,
+      background: transparent,
+    ),
+    active-disable: (
+      border-color: $blue,
+      background: transparent,
+    ),
+  ),
+  neutral: (
+    color: $black,
+    border-color: $white,
+    background: $white,
+    active: (
+      color: $black,
+      border-color: transparent,
+      background: transparent,
+    ),
+    hover: (
+      border-color: $black,
+      background: $gray-100,
+    ),
+    active-hover: (
+      border-color: $black,
+      background: $gray-100,
+    ),
+    active-pressed: (
+      border-color: $black,
+      background: $gray-200,
+    ),
+    active-focused: (
+      border-color: transparent,
+      background: transparent,
+    ),
+    active-disable: (
+      border-color: transparent,
+      background: transparent,
+    ),
+  ),
+  green: (
+    color: $black,
+    border-color: $gray-100,
+    background: $gray-100,
+    active: (
+      color: $gray-100,
+      border-color: $green,
+      background: $teal,
+    ),
+    hover: (
+      border-color: $gray-400,
+      background: $gray-100,
+    ),
+    active-hover: (
+      border-color: $green,
+      background: $teal,
+    ),
+    active-pressed: (
+      border-color: $green,
+      background: $teal,
+    ),
+    active-focused: (
+      border-color: $green,
+      background: $teal,
+    ),
+    active-disable: (
+      border-color: $gray-200,
+      background: transparent,
+    ),
+  ),
+);
+
+@include header-nav($nav-item);

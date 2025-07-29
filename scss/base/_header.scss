@@ -1,0 +1,44 @@
+.header {
+  background-color: $gray-100;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  @include not_on_desktop {
+    padding-block: 10px;
+  }
+}
+.header-top {
+  align-items: center;
+  background-color: $gray-200;
+  border-bottom: 1px solid $gray-300;
+  display: flex;
+  @include on_desktop {
+    display: flex !important;
+  }
+  @include not_on_desktop {
+    display: none !important;
+  }
+}
+/* Backdrop */
+#menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  z-index: 50;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.header-main .mobile {
+  display: none;
+  flex: 100%;
+}

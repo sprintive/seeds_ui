@@ -1,0 +1,108 @@
+.site-footer {
+  .block__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid $gray-600;
+    padding-bottom: 10px;
+    font-size: 16px;
+  }
+
+  &.light {
+    background: $gray-100;
+    color: $black;
+    .block__title {
+      border-bottom: 1px solid $gray-300;
+    }
+
+    .menu--seeds-social-media {
+      
+      .nav--seeds-social-media {
+        padding-left: 0px;
+        margin-bottom: 20px;
+      }
+
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 15px;
+        > li {
+          flex: 1;
+          min-width: calc(33.33% - 15px);
+          padding-left: 0px;
+          margin: 0.25em 0;
+
+          @media (max-width: 992px) {
+            min-width: 100%;
+          }
+
+          > .menu-item-text {
+            border-bottom: 1px solid $gray-300;
+            display: block;
+            padding-bottom: 15px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      span,
+      a {
+        color: $black;
+        display: block;
+        text-decoration: none;
+        padding: 3px 0px;
+        &.link-external {
+          display: flex;
+        }
+      }
+
+      a {
+        &:hover {
+          text-decoration: underline;
+          color: $gray-600;
+        }
+      }
+    }
+  }
+
+  .block--system_menu_block-copy-right {
+    margin: 0.75rem 0;
+  }
+
+  .menu--copy-right {
+    ul {
+      padding-left: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  .menu--footer-navigration,
+  .menu--footer {
+    ul {
+      padding-left: 0px;
+      list-style: none;
+      gap: 15px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      li{
+        p{
+          padding-bottom: 0px !important;
+          margin-bottom: 0px !important;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.py-5xl {
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}

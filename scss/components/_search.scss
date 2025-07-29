@@ -35,7 +35,7 @@
       align-self: stretch;
       padding: 8px;
       gap: 8px;
-      @include icon($icon-search, 20px, 'inherit', '::before', 0px);
+      @include icon($icon-search, 20px, inherit, '::before', 0px);
       input {
         flex: 1;
         border: unset;

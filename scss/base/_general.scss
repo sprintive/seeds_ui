@@ -51,3 +51,9 @@
 img {
   @include img-fluid();
 }
+
+.block--system_menu_block-main,
+.block--system_menu_block-actions {
+  position: static;
+  flex: 1;
+}

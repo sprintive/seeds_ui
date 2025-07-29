@@ -1,0 +1,129 @@
+@mixin header-nav($variants) {
+  @each $variant, $properties in $variants {
+    .nav-#{$variant} {
+      position: relative;
+      border-radius: 4px;
+      color: map-get($properties, 'color');
+      background-color: map-get($properties, 'background');
+      display: inline-flex;
+      padding: 16px;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      > a {
+        color: map-get($properties, 'color');
+      }
+      svg,
+      path {
+        fill: map-get($properties, 'color');
+      }
+      &:hover {
+        background-color: map-get(map-get($properties, 'hover'), 'background');
+
+        &::before {
+          transition:
+            opacity 300ms ease,
+            background-color 300ms ease;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 6px;
+          right: 6px;
+          z-index: 1;
+          height: 6px;
+          border-radius: 99px;
+          background-color: map-get(
+            map-get($properties, 'hover'),
+            'border-color'
+          );
+        }
+      }
+      &.active {
+        color: map-get(map-get($properties, 'active'), 'color');
+        a {
+          color: map-get(map-get($properties, 'active'), 'color');
+        }
+        background-color: map-get(map-get($properties, 'active'), 'background');
+        &::before {
+          transition:
+            opacity 300ms ease,
+            background-color 300ms ease;
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 6px;
+          right: 6px;
+          z-index: 1;
+          height: 6px;
+          border-radius: 99px;
+          background-color: map-get(
+            map-get($properties, 'active'),
+            'border-color'
+          );
+        }
+        svg,
+        path {
+          fill: map-get(map-get($properties, 'active'), 'color');
+        }
+        &:hover {
+          background-color: map-get(
+            map-get($properties, 'active-hover'),
+            'background'
+          );
+
+          &::before {
+            background-color: map-get(
+              map-get($properties, 'active-hover'),
+              'border-color'
+            );
+          }
+        }
+        &:active,
+        &.pressed {
+          background-color: map-get(
+            map-get($properties, 'active-pressed'),
+            'background'
+          );
+          &::before {
+            background-color: map-get(
+              map-get($properties, 'active-pressed'),
+              'border-color'
+            );
+          }
+        }
+        &:focus {
+          outline: none;
+          background-color: map-get(
+            map-get($properties, 'active-focused'),
+            'background'
+          );
+
+          &::before {
+            background-color: map-get(
+              map-get($properties, 'active-focused'),
+              'border-color'
+            );
+          }
+        }
+        &:disabled,
+        &[aria-disabled='true'] {
+          background-color: map-get(
+            map-get($properties, 'active-disable'),
+            'background'
+          );
+
+          &::before {
+            background-color: map-get(
+              map-get($properties, 'active-disable'),
+              'border-color'
+            );
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
