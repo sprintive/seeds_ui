@@ -264,6 +264,10 @@
       }
     }
   }
+  .navigation{
+    display: flex;
+    align-items: baseline;
+  }
 }
 
   @include not_on_desktop {

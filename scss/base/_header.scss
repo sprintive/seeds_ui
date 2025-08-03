@@ -20,7 +20,16 @@
   @include not_on_desktop {
     display: none !important;
   }
+  .region--header {
+    width: 100%;
+  }
 }
+
+.header-top-content {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Backdrop */
 #menu-backdrop {
   position: fixed;
