@@ -62,30 +62,24 @@ $nav-item: (
   green: (
     color: $black,
     border-color: $gray-100,
-    background: $gray-100,
+    background: $white,
     active: (
-      color: $gray-100,
-      border-color: $green,
-      background: $teal,
+      color: $black,
+      background: $gray-100,
     ),
     hover: (
-      border-color: $gray-400,
       background: $gray-100,
     ),
     active-hover: (
-      border-color: $green,
-      background: $teal,
+      background: $gray-100,
     ),
     active-pressed: (
-      border-color: $green,
-      background: $teal,
+      background: $gray-100,
     ),
     active-focused: (
-      border-color: $green,
-      background: $teal,
+      background: $gray-100,
     ),
     active-disable: (
-      border-color: $gray-200,
       background: transparent,
     ),
   ),

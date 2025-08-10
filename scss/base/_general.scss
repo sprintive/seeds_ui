@@ -57,3 +57,11 @@ img {
   position: static;
   flex: 1;
 }
+
+.custom-direction {
+  display: flex;
+  flex-direction: row;
+  @include not_on_desktop {
+    flex-direction: column;
+  }
+}
