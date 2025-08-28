@@ -61,3 +61,13 @@
   display: none;
   flex: 100%;
 }
+
+.navbar-toggler{
+  background: transparent;
+  border: none;
+  padding: 0px;
+}
+
+.mobile-collapse{
+  background: $white;
+}
