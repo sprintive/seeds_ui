@@ -28,7 +28,7 @@
     }
 }
   
-.teaser {
+.card-teaser {
     border: 1px solid #e4e7eb;
     background-color: #ffffff;
     &:hover {
@@ -54,8 +54,8 @@
     }
 }
   
-.right-teaser,
-.left-teaser {
+.card-right-teaser,
+.card-left-teaser {
   border: 1px solid #e4e7eb;
   background-color: #ffffff;
   &:hover {

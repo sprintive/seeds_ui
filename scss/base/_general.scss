@@ -95,23 +95,10 @@
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .saud-field-separator {
   border-bottom: 1px solid #d2d6db;
 }
-//need review bellow.
-.reset-right {
-  right: 0;
-}
-.relative {
-  position: relative;
-}
-.absolute {
-  position: absolute;
-}
+
 //Last Updated time
 
 .page-last-update {
@@ -127,13 +114,7 @@
   }
 }
 
-.facet-link,
-.dropdown-menu-item {
-  &.active {
-    justify-content: space-between;
-    @include icon($icon-success, 16px, inherit, '::after', 4px);
-  }
-}
+
 /* Search block */
 .stelios-search-block {
   .stelios-dropdown-content {
