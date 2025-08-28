@@ -1,15 +1,8 @@
 @import "vendor/rfs";
-@import "mixins/breakpoints";
-@import "mixins/image";
-@import "mixins/reset-text";
 // Utilities
 @import "mixins/utilities";
-
+@import "mixins/breakpoints";
 @import "mixins/backdrop";
-@import "mixins/lists";
-@import "mixins/border-radius";
 @import "mixins/container";
 @import "mixins/grid";
 @import "mixins/icon";
-@import "mixins/shapes";
-@import "mixins/navigation";

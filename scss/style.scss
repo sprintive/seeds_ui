@@ -6,11 +6,6 @@
 @import "../icons/style";
 @import "../icons/fixes";
 
-// Helpers
-@import "helpers/color-bg";
-@import "helpers/colored-links";
-@import "helpers/position";
-
 // Layout & components
 @import "reboot";
 @import "containers";
@@ -19,26 +14,6 @@
 @import "base/layout";
 @import "base/header";
 @import "base/footer";
-@import "theme/print";
 @import "components";
-@import "stelios";
-// Utilities
+
 @import "utilities/api";
-
-@font-face {
-  font-family: "metropolis";
-  src: url("../fonts/metropolis/Metropolis-Regular.woff2");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "metropolis";
-  src: url("../fonts/metropolis/Metropolis-SemiBold.woff2");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "metropolis";
-  src: url("../fonts/metropolis/Metropolis-Bold.woff2");
-  font-weight: 600;
-}
