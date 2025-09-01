@@ -29,8 +29,8 @@
 }
   
 .card-teaser {
-    border: 1px solid #e4e7eb;
-    background-color: #ffffff;
+    border: 1px solid $gray-300;
+    background-color: $white;
     &:hover {
       .image-scale {
         img {
@@ -56,8 +56,8 @@
   
 .card-right-teaser,
 .card-left-teaser {
-  border: 1px solid #e4e7eb;
-  background-color: #ffffff;
+  border: 1px solid $gray-300;
+  background-color: $white;
   &:hover {
     .image-scale {
       img {

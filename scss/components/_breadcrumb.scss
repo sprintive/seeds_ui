@@ -20,7 +20,7 @@ ul.breadcrumb {
     @include icon(
       $icon-arrow-right,
       16px,
-      #9da4ae,
+      $gray-500,
       '::before',
       0,
       'false',
@@ -38,26 +38,16 @@ ul.breadcrumb {
 
     a {
       text-decoration: none;
-      color: #384250;
+      color: $gray-900;
     }
 
     &:last-child {
-      color: #9da4ae;
+      color: $gray-500;
     }
     &:first-child {
       &::before {
         display: none;
       }
     }
-  }
-}
-
-.menu-container ul.breadcrumb-drop-down {
-  margin-bottom: 0;
-  padding: 4px;
-  li {
-    @include font-size(14px);
-    font-weight: 400;
-    color: #384250;
   }
 }
