@@ -2,21 +2,21 @@
 @use "utilities/api" as *;
 
 // Icons
-@use "../icons/style" as icons;
-@use "../icons/fixes" as icon-fixes;
+@use "../icons/style" as *;
+@use "../icons/fixes" as *;
 
 // Layout & components
 @use "reboot" as *;  // Global resets are better without namespace
-@use "containers" as container;
-@use "grid" as grid;
+@use "containers" as *;
+@use "grid" as *;
 
 // Base styles
-@use "base/element" as base;
-@use "base/layout" as layout;
-@use "base/header" as header;
-@use "base/footer" as footer;
+@use "base/element" as *;
+@use "base/layout" as *;
+@use "base/header" as *;
+@use "base/footer" as *;
 
 // Components and overrides
-@use "components";
-@use "override" as override;
+@use "components" as *;
+@use "override" as *;
 
