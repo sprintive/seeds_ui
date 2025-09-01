@@ -1,6 +1,4 @@
-// Row
-//
-// Rows contain your columns.
+@use "base" as *;
 
 :root {
   @each $name, $value in $grid-breakpoints {

@@ -1,4 +1,5 @@
 
+@use "../base" as *;
 .pager {
   .pager__items {
     display: flex;

@@ -1,8 +1,10 @@
-@import "vendor/rfs";
-// Utilities
-@import "mixins/utilities";
-@import "mixins/breakpoints";
-@import "mixins/backdrop";
-@import "mixins/container";
-@import "mixins/grid";
-@import "mixins/icon";
+// Forward all mixins so they can be used by other files
+@forward "vendor/rfs";
+
+// Forward utility mixins
+@forward "mixins/utilities";
+@forward "mixins/breakpoints";
+@forward "mixins/backdrop";
+@forward "mixins/container";
+@forward "mixins/grid";
+@forward "mixins/icon";

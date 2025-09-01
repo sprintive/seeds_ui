@@ -1,0 +1,5 @@
+// Forward icon variables and mixins
+@forward "../icons/variables";
+
+@forward "variables";  // Forward all variables
+@forward "mixins";  // Forward all mixins

@@ -1,9 +1,9 @@
-@import 'components/accordion';
-@import 'components/breadcrumb';
-@import 'components/icons';
-@import 'components/jsonapi-link';
-@import 'components/link';
-@import 'components/pagination';
-@import 'components/tooltip';
-@import 'components/table';
-@import 'components/card';
+// Forward all component styles so they can be used by the main stylesheet
+@forward 'components/accordion';
+@forward 'components/breadcrumb';
+@forward 'components/icons';
+@forward 'components/jsonapi-link';
+@forward 'components/pagination';
+@forward 'components/tooltip';
+@forward 'components/table';
+@forward 'components/card';

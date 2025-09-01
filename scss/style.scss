@@ -1,22 +1,22 @@
-@use "sass:map";
-@import "variables";
-@import "mixins";
-@import "utilities";
+// Utilities API
+@use "utilities/api" as *;
 
-@import "../icons/style";
-@import "../icons/fixes";
+// Icons
+@use "../icons/style" as icons;
+@use "../icons/fixes" as icon-fixes;
 
 // Layout & components
-@import "reboot";
-@import "containers";
-@import "grid";
+@use "reboot" as *;  // Global resets are better without namespace
+@use "containers" as container;
+@use "grid" as grid;
 
-@import "base/element";
-@import "base/layout";
-@import "base/header";
-@import "base/footer";
+// Base styles
+@use "base/element" as base;
+@use "base/layout" as layout;
+@use "base/header" as header;
+@use "base/footer" as footer;
 
-@import "components";
-@import "override";
+// Components and overrides
+@use "components";
+@use "override" as override;
 
-@import "utilities/api";
