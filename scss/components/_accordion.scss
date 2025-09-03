@@ -1,4 +1,5 @@
 @use "../base" as *;
+
 .accordion {
   .accordion-item {
     .accordion-header {
@@ -8,15 +9,13 @@
       transition: background-color 300ms ease;
       border-top: 1px solid $gray-300;
       justify-content: space-between;
-      flex-direction: row-reverse;
+      flex-direction: row;
       font-size: 16px;
       font-weight: 700;
       * {
         font-size: 16px;
         font-weight: 700;
       }
-      @include icon($icon-dropdown-input, 20px, inherit, '::before', 0px);
-
       &:hover {
         background-color: $gray-400;
       }
@@ -29,35 +28,27 @@
       display: none;
       overflow: hidden;
       max-height: 0;
-      padding: 16px;
-      padding-inline-end: 32px;
-    }
-    &.leading {
-      .accordion-header {
-        justify-content: unset;
-        flex-direction: row;
-      }
-      .accordion-content {
-        padding-inline-end: 16px;
-        padding-inline-start: 48px;
+      > div {
+        margin: 16px 0;
       }
     }
     &.active {
       .accordion-header {
-        &::before {
+        .accordion-arrow-icon,
+        .accordion-plus-icon {
           transition: rotate 300ms ease;
           transform: rotate(180deg);
         }
       }
       .accordion-content {
         display: block;
+        max-height: fit-content;
       }
     }
     &.disabled {
       .accordion-header {
         pointer-events: none;
         color: $gray-500;
-        @include icon($icon-dropdown-input, 20px, inherit, '::before', 0px);
       }
     }
   }

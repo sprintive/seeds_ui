@@ -1,5 +1,9 @@
 @use "base" as *;
 
+.block-content{
+  position: relative;
+}
+
 .sr-only {
   height: 1px;
   margin: -1px;

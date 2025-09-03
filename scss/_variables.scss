@@ -105,6 +105,10 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+$focus-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+$transition-time: 0.3s;
+
 $position-values: (
   0: 0,
   50: 50%,
