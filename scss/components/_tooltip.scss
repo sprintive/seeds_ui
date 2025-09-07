@@ -26,7 +26,6 @@
       @include font-size(12px);
       font-weight: 400;
     }
-    @include icon($icon-tooltip-dark, 20px, inherit, '::before', 0px);
   }
   &.tooltip-light {
     .content {

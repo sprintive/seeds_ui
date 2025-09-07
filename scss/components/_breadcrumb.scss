@@ -18,15 +18,6 @@ ul.breadcrumb {
       @include font-size(14px);
     }
     @include font-size(14px);
-    @include icon(
-      $icon-arrow-right,
-      16px,
-      $gray-500,
-      '::before',
-      0,
-      'false',
-      'true'
-    );
     align-items: center;
     [dir='rtl'] & {
       &::before {
