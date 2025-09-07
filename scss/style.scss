@@ -1,10 +1,6 @@
 // Utilities API
 @use "utilities/api" as *;
 
-// Icons
-@use "../icons/style" as *;
-@use "../icons/fixes" as *;
-
 // Layout & components
 @use "reboot" as *;  // Global resets are better without namespace
 @use "containers" as *;
