@@ -1,5 +1,4 @@
 @use "../base" as *;
-$icon-size: 16px;
 ul.breadcrumb {
   display: flex;
   flex-wrap: wrap;
@@ -15,9 +14,7 @@ ul.breadcrumb {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      @include font-size(14px);
     }
-    @include font-size(14px);
     align-items: center;
     [dir='rtl'] & {
       &::before {

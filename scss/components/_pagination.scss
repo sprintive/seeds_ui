@@ -9,29 +9,18 @@
       position: relative;
       display: block;
       padding: 8px;
-      @include font-size(18px);
-      color: $primary;
-      background-color: $white;
-      border: 1px solid $gray-300;
-
       &:hover {
         z-index: 2;
       }
-
       &:focus {
         z-index: 3;
       }
-
       &.pager__item--active,
       .pager__item--active > & {
         z-index: 3;
-        color: $white;
-        background-color: $primary;
       }
-
       &.disabled,
       .disabled > & {
-        color: rgba($gray-900, 0.75);
         pointer-events: none;
       }
     }

@@ -48,9 +48,8 @@
     li {
       padding: 0 8px;
       a {
-        color: $black;
+        color: inherit;
         text-decoration: none;
-        @include font-size(18px);
       }
     }
   }
