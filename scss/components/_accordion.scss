@@ -10,12 +10,6 @@
       border-top: 1px solid $gray-300;
       justify-content: space-between;
       flex-direction: row;
-      font-size: 16px;
-      font-weight: 700;
-      * {
-        font-size: 16px;
-        font-weight: 700;
-      }
       &:hover {
         background-color: $gray-400;
       }
