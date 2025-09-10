@@ -161,53 +161,137 @@
 }
 
 .seeds-ui-timeline {
-  display: grid;
-  grid-template-columns: 2px 1fr;
-  grid-auto-columns: max-content;
-  column-gap: 32px;
-  list-style: none;
-  width: min(960px, 90%);
-  margin-inline: auto;
   position: relative;
 
-  &::before {
-    content: "";
-    grid-column: 1;
-    grid-row: 1 / span 20;
-    background: $gray-300;
-    border-radius: 1px;
-    width: 2px;
+  // Base vertical layout
+  &.seeds-ui-timeline--vertical {
+    .seeds-ui-timeline__inner {
+      display: grid;
+      grid-template-columns: 2px 1fr;
+      grid-auto-columns: max-content;
+      column-gap: 32px;
+      list-style: none;
+      position: relative;
+
+      &::before {
+        content: "";
+        grid-column: 1;
+        grid-row: 1 / span 20;
+        background: $gray-300;
+        border-radius: 1px;
+        width: 2px;
+      }
+
+      .seeds-ui-timeline-item {
+        grid-column: 2;
+        margin-inline: 24px;
+        grid-row: span 2;
+        display: grid;
+        grid-template-rows: min-content min-content min-content;
+
+        .seeds-ui-timeline-date {
+          margin-bottom: 0.5rem;
+        }
+
+        .seeds-ui-timeline-content {
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      // Desktop layout with alternating sides
+      @media (min-width: 640px) {
+        grid-template-columns: 1fr 2px 1fr;
+
+        &::before {
+          grid-column: 2;
+        }
+
+        .seeds-ui-timeline-item {
+          &.left {
+            grid-column: 1;
+            text-align: right;
+
+          }
+
+          &.right {
+            grid-column: 3;
+            text-align: left;
+          }
+
+          &:nth-child(2) {
+            grid-row: 2/4;
+          }
+        }
+      }
+    }
   }
 
-  .seeds-ui-timeline-item {
-    grid-column: 2;
-    margin-inline: 24px;
-    grid-row: span 2;
-    display: grid;
-    grid-template-rows: min-content min-content min-content;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-in-out forwards;
+  // Horizontal layout
+  &.seeds-ui-timeline--horizontal {
+    .seeds-ui-timeline__inner {
+      display: flex;
+      overflow-x: auto;
+      padding: 2rem 0;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 2px;
+        background: $gray-300;
+      }
+
+      .seeds-ui-timeline-item {
+        flex: 0 0 300px;
+        margin: 0 1rem;
+        position: relative;
+
+        .seeds-ui-timeline-date {
+          text-align: center;
+          margin-bottom: 1rem;
+          color: $gray-600;
+        }
+
+        .seeds-ui-timeline-content {
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin-top: 2rem;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
-  @media (min-width: 640px) {
-    grid-template-columns: 1fr 2px 1fr;
+  // Animation styles
+  &.seeds-ui-timeline--animate {
+    .seeds-ui-timeline-item {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-in-out forwards;
 
-    &::before {
-      grid-column: 2;
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.2}s;
+        }
+      }
     }
 
-    .seeds-ui-timeline-item {
-      &.left {
-        grid-column: 1;
-        text-align: right;
-      }
-      &.right {
-        grid-column: 3;
-      }
-      &:nth-child(2) {
-        grid-row: 2/4;
-      }
+    &.seeds-ui-timeline--horizontal .seeds-ui-timeline-item {
+      transform: translateX(20px);
+      animation-name: fadeInRight;
     }
   }
 }
@@ -312,5 +396,16 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
