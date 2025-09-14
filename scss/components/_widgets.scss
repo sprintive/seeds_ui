@@ -228,53 +228,6 @@
     }
   }
 
-  // Horizontal layout
-  &.seeds-ui-timeline--horizontal {
-    .seeds-ui-timeline__inner {
-      display: flex;
-      overflow-x: auto;
-      padding: 2rem 0;
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        height: 2px;
-        background: $gray-300;
-      }
-
-      .seeds-ui-timeline-item {
-        flex: 0 0 300px;
-        margin: 0 1rem;
-        position: relative;
-
-        .seeds-ui-timeline-date {
-          text-align: center;
-          margin-bottom: 1rem;
-          color: $gray-600;
-        }
-
-        .seeds-ui-timeline-content {
-          padding: 1.5rem;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          margin-top: 2rem;
-        }
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-
   // Animation styles
   &.seeds-ui-timeline--animate {
     .seeds-ui-timeline-item {
@@ -287,11 +240,6 @@
           animation-delay: #{$i * 0.2}s;
         }
       }
-    }
-
-    &.seeds-ui-timeline--horizontal .seeds-ui-timeline-item {
-      transform: translateX(20px);
-      animation-name: fadeInRight;
     }
   }
 }
