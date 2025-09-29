@@ -1,6 +1,6 @@
-@use "base" as *;
+@use 'base' as *;
 
-.block-content{
+.block-content {
   position: relative;
 }
 
@@ -15,7 +15,14 @@
   border-width: 0;
   white-space: nowrap;
 }
-
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
 .block-wrapper {
   max-width: 100%;
   position: relative;
@@ -41,15 +48,12 @@
   }
 }
 
-
 /* Search block */
 .stelios-search-block {
   .stelios-dropdown-content {
     max-height: 0;
     overflow: hidden;
-    transition:
-      max-height 0.3s ease-out,
-      opacity 0.3s ease-out;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     opacity: 0;
     visibility: hidden;
     background-color: $white;
