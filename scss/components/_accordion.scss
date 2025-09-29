@@ -10,28 +10,31 @@
       border-top: 1px solid $gray-300;
       justify-content: space-between;
       flex-direction: row;
-      &:hover {
-        background-color: $gray-400;
-      }
-      &:active {
-        background-color: $gray-300;
-      }
+      padding: 32px;
+      gap: 16px;
      
     }
     .accordion-content {
       display: none;
       overflow: hidden;
       max-height: 0;
+      padding: 0px 32px 32px;
       > div {
         margin: 16px 0;
       }
     }
+    .accordion-icon {
+      svg {
+        transition: transform 300ms ease;
+        transform: rotate(0deg);
+      }
+    }
     &.active {
       .accordion-header {
-        .accordion-arrow-icon,
-        .accordion-plus-icon {
-          transition: rotate 300ms ease;
-          transform: rotate(180deg);
+        .accordion-icon {
+          svg {
+            transform: rotate(180deg);
+          }
         }
       }
       .accordion-content {
