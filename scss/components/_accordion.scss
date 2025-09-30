@@ -13,12 +13,18 @@
       padding: 32px;
       gap: 16px;
      
+      @include media-breakpoint-max(lg, $grid-breakpoints) {
+        padding: 16px;
+      }
     }
     .accordion-content {
       display: none;
       overflow: hidden;
       max-height: 0;
       padding: 0px 32px 32px;
+      @include media-breakpoint-max(lg, $grid-breakpoints) {
+        padding: 16px;
+      }
       > div {
         margin: 16px 0;
       }
