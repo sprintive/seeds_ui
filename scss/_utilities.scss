@@ -3,13 +3,13 @@
 $utilities: () !default;
 $utilities: map-merge(
   (
-    "align": (
+    'align': (
       property: vertical-align,
       class: align,
       values: baseline top middle bottom text-bottom text-top,
     ),
 
-    "float": (
+    'float': (
       responsive: true,
       property: float,
       values: (
@@ -19,7 +19,7 @@ $utilities: map-merge(
       ),
     ),
 
-    "object-fit": (
+    'object-fit': (
       responsive: true,
       property: object-fit,
       values: (
@@ -31,7 +31,7 @@ $utilities: map-merge(
       ),
     ),
 
-    "opacity": (
+    'opacity': (
       property: opacity,
       values: (
         0: 0,
@@ -42,19 +42,19 @@ $utilities: map-merge(
       ),
     ),
 
-    "overflow": (
+    'overflow': (
       property: overflow,
       values: auto hidden visible scroll,
     ),
-    "overflow-x": (
+    'overflow-x': (
       property: overflow-x,
       values: auto hidden visible scroll,
     ),
-    "overflow-y": (
+    'overflow-y': (
       property: overflow-y,
       values: auto hidden visible scroll,
     ),
-    "display": (
+    'display': (
       responsive: true,
       print: true,
       property: display,
@@ -63,29 +63,29 @@ $utilities: map-merge(
         table-cell flex inline-flex none,
     ),
 
-    "position": (
+    'position': (
       property: position,
       values: static relative absolute fixed sticky,
     ),
-    "top": (
+    'top': (
       property: top,
       values: $position-values,
     ),
-    "bottom": (
+    'bottom': (
       property: bottom,
       values: $position-values,
     ),
-    "start": (
+    'start': (
       property: left,
       class: start,
       values: $position-values,
     ),
-    "end": (
+    'end': (
       property: right,
       class: end,
       values: $position-values,
     ),
-    "translate-middle": (
+    'translate-middle': (
       property: transform,
       class: translate-middle,
       values: (
@@ -95,45 +95,159 @@ $utilities: map-merge(
       ),
     ),
 
-    "width": (
+    'width': (
+      responsive: true,
       property: width,
       class: w,
       values: (
+        // Percentage values
+        0: 0,
+        10: 10%,
+        20: 20%,
         25: 25%,
+        30: 30%,
+        33: 33.333333%,
+        40: 40%,
         50: 50%,
+        60: 60%,
+        66: 66.666667%,
+        70: 70%,
         75: 75%,
+        80: 80%,
+        90: 90%,
         100: 100%,
+        // Auto values
         auto: auto,
+        // Viewport values
+        vw-25: 25vw,
+        vw-50: 50vw,
+        vw-75: 75vw,
+        vw-100: 100vw,
+        // Content-based values
+        min: min-content,
+        max: max-content,
+        fit: fit-content,
       ),
     ),
-    "max-width": (
+    'min-width': (
+      responsive: true,
+      property: min-width,
+      class: min-w,
+      values: (
+        0: 0,
+        full: 100%,
+        min: min-content,
+        max: max-content,
+        fit: fit-content,
+      ),
+    ),
+    'max-width': (
+      responsive: true,
       property: max-width,
       class: mw,
       values: (
-        100: 100%,
+        0: 0,
+        none: none,
+        xs: 20rem,
+        // 320px
+        sm: 24rem,
+        // 384px
+        md: 28rem,
+        // 448px
+        lg: 32rem,
+        // 512px
+        xl: 36rem,
+        // 576px
+        2xl: 42rem,
+        // 672px
+        3xl: 48rem,
+        // 768px
+        4xl: 56rem,
+        // 896px
+        5xl: 64rem,
+        // 1024px
+        6xl: 72rem,
+        // 1152px
+        7xl: 80rem,
+        // 1280px
+        full: 100%,
+        min: min-content,
+        max: max-content,
+        fit: fit-content,
+        prose: 65ch,
+        screen-sm: 640px,
+        screen-md: 768px,
+        screen-lg: 1024px,
+        screen-xl: 1280px,
+        screen-xxl: 1536px,
       ),
     ),
 
-    "height": (
+    'height': (
+      responsive: true,
       property: height,
       class: h,
       values: (
+        // Percentage values
+        0: 0,
+        10: 10%,
+        20: 20%,
         25: 25%,
+        30: 30%,
+        33: 33.333333%,
+        40: 40%,
         50: 50%,
+        60: 60%,
+        66: 66.666667%,
+        70: 70%,
         75: 75%,
+        80: 80%,
+        90: 90%,
         100: 100%,
+        // Auto values
         auto: auto,
+        // Viewport values
+        vh-25: 25vh,
+        vh-50: 50vh,
+        vh-75: 75vh,
+        vh-100: 100vh,
+        // Content-based values
+        min: min-content,
+        max: max-content,
+        fit: fit-content,
+        // Screen height
+        screen: 100vh,
       ),
     ),
-    "max-height": (
+    'min-height': (
+      responsive: true,
+      property: min-height,
+      class: min-h,
+      values: (
+        0: 0,
+        full: 100%,
+        screen: 100vh,
+        min: min-content,
+        max: max-content,
+        fit: fit-content,
+      ),
+    ),
+    'max-height': (
+      responsive: true,
       property: max-height,
       class: mh,
       values: (
-        100: 100%,
+        0: 0,
+        none: none,
+        full: 100%,
+        screen: 100vh,
+        min: min-content,
+        max: max-content,
+        fit: fit-content,
       ),
     ),
     // Flex utilities
-    "flex":
+    'flex':
       (
         responsive: true,
         property: flex,
@@ -142,13 +256,13 @@ $utilities: map-merge(
           full: 1 1 100%,
         ),
       ),
-    "flex-direction": (
+    'flex-direction': (
       responsive: true,
       property: flex-direction,
       class: flex,
       values: row column row-reverse column-reverse,
     ),
-    "flex-grow": (
+    'flex-grow': (
       responsive: true,
       property: flex-grow,
       class: flex,
@@ -157,7 +271,7 @@ $utilities: map-merge(
         grow-1: 1,
       ),
     ),
-    "flex-shrink": (
+    'flex-shrink': (
       responsive: true,
       property: flex-shrink,
       class: flex,
@@ -166,13 +280,13 @@ $utilities: map-merge(
         shrink-1: 1,
       ),
     ),
-    "flex-wrap": (
+    'flex-wrap': (
       responsive: true,
       property: flex-wrap,
       class: flex,
       values: wrap nowrap wrap-reverse,
     ),
-    "justify-content": (
+    'justify-content': (
       responsive: true,
       property: justify-content,
       values: (
@@ -184,7 +298,7 @@ $utilities: map-merge(
         evenly: space-evenly,
       ),
     ),
-    "align-items": (
+    'align-items': (
       responsive: true,
       property: align-items,
       values: (
@@ -195,7 +309,7 @@ $utilities: map-merge(
         stretch: stretch,
       ),
     ),
-    "align-content": (
+    'align-content': (
       responsive: true,
       property: align-content,
       values: (
@@ -207,7 +321,7 @@ $utilities: map-merge(
         stretch: stretch,
       ),
     ),
-    "align-self": (
+    'align-self': (
       responsive: true,
       property: align-self,
       values: (
@@ -219,7 +333,7 @@ $utilities: map-merge(
         stretch: stretch,
       ),
     ),
-    "order": (
+    'order': (
       responsive: true,
       property: order,
       values: (
@@ -235,7 +349,7 @@ $utilities: map-merge(
     ),
 
     // Margin utilities
-    "margin":
+    'margin':
       (
         responsive: true,
         property: margin,
@@ -248,7 +362,7 @@ $utilities: map-merge(
             )
           ),
       ),
-    "margin-x": (
+    'margin-x': (
       responsive: true,
       property: margin-right margin-left,
       class: mx,
@@ -260,7 +374,7 @@ $utilities: map-merge(
           )
         ),
     ),
-    "margin-y": (
+    'margin-y': (
       responsive: true,
       property: margin-top margin-bottom,
       class: my,
@@ -272,7 +386,7 @@ $utilities: map-merge(
           )
         ),
     ),
-    "margin-top": (
+    'margin-top': (
       responsive: true,
       property: margin-top,
       class: mt,
@@ -284,7 +398,7 @@ $utilities: map-merge(
           )
         ),
     ),
-    "margin-end": (
+    'margin-end': (
       responsive: true,
       property: margin-right,
       class: me,
@@ -296,7 +410,7 @@ $utilities: map-merge(
           )
         ),
     ),
-    "margin-bottom": (
+    'margin-bottom': (
       responsive: true,
       property: margin-bottom,
       class: mb,
@@ -308,7 +422,7 @@ $utilities: map-merge(
           )
         ),
     ),
-    "margin-start": (
+    'margin-start': (
       responsive: true,
       property: margin-left,
       class: ms,
@@ -322,71 +436,71 @@ $utilities: map-merge(
     ),
 
     // Padding utilities
-    "padding":
+    'padding':
       (
         responsive: true,
         property: padding,
         class: p,
         values: $spacers,
       ),
-    "padding-x": (
+    'padding-x': (
       responsive: true,
       property: padding-right padding-left,
       class: px,
       values: $spacers,
     ),
-    "padding-y": (
+    'padding-y': (
       responsive: true,
       property: padding-top padding-bottom,
       class: py,
       values: $spacers,
     ),
-    "padding-top": (
+    'padding-top': (
       responsive: true,
       property: padding-top,
       class: pt,
       values: $spacers,
     ),
-    "padding-end": (
+    'padding-end': (
       responsive: true,
       property: padding-right,
       class: pe,
       values: $spacers,
     ),
-    "padding-bottom": (
+    'padding-bottom': (
       responsive: true,
       property: padding-bottom,
       class: pb,
       values: $spacers,
     ),
-    "padding-start": (
+    'padding-start': (
       responsive: true,
       property: padding-left,
       class: ps,
       values: $spacers,
     ),
     // Gap utility
-    "gap":
+    'gap':
       (
         responsive: true,
         property: gap,
         class: gap,
         values: $spacers,
       ),
-    "row-gap": (
+    'row-gap': (
       responsive: true,
       property: row-gap,
       class: row-gap,
       values: $spacers,
     ),
-    "column-gap": (
+    'column-gap': (
       responsive: true,
       property: column-gap,
       class: column-gap,
       values: $spacers,
     ),
 
-    "text-align": (
+    'text-align': (
       responsive: true,
       property: text-align,
       class: text,
@@ -396,16 +510,16 @@ $utilities: map-merge(
         center: center,
       ),
     ),
-    "text-decoration": (
+    'text-decoration': (
       property: text-decoration,
       values: none underline line-through,
     ),
-    "text-transform": (
+    'text-transform': (
       property: text-transform,
       class: text,
       values: lowercase uppercase capitalize,
     ),
-    "white-space": (
+    'white-space': (
       property: white-space,
       class: text,
       values: (
@@ -413,7 +527,7 @@ $utilities: map-merge(
         nowrap: nowrap,
       ),
     ),
-    "word-wrap": (
+    'word-wrap': (
       property: word-wrap word-break,
       class: text,
       values: (
@@ -422,7 +536,7 @@ $utilities: map-merge(
       rtl: false,
     ),
 
-    "text-opacity": (
+    'text-opacity': (
       css-var: true,
       class: text-opacity,
       values: (
@@ -433,17 +547,17 @@ $utilities: map-merge(
       ),
     ),
 
-    "user-select": (
+    'user-select': (
       property: user-select,
       values: all auto none,
     ),
-    "pointer-events": (
+    'pointer-events': (
       property: pointer-events,
       class: pe,
       values: none auto,
     ),
 
-    "visibility": (
+    'visibility': (
       property: visibility,
       class: null,
       values: (
@@ -452,7 +566,7 @@ $utilities: map-merge(
       ),
     ),
 
-    "z-index": (
+    'z-index': (
       property: z-index,
       class: z,
       values: $zindex-levels,
