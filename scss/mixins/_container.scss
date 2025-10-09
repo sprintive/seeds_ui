@@ -1,6 +1,8 @@
 // Container mixins
 @use "../variables" as *;
 
+@use "../mixins/breakpoints" as *;
+
 // Original container mixin
 @mixin make-container($gutter: $container-padding-x) {
   --gutter-x: #{$gutter};
@@ -16,32 +18,23 @@
   margin-left: auto;
 }
 
-// Container-left: Starts at container left edge, extends to viewport right edge
-@mixin make-container-left($gutter: $container-padding-x, $max-width: map-get($container-max-widths, 'xl')) {
-  --gutter-x: #{$gutter};
-  width: 100%;
-  padding-left: max(calc(var(--gutter-x) * 0.5), calc((100vw - #{$max-width}) / 2));
-  padding-right: 0;
-  margin-left: 0;
-  margin-right: 0;
-  
-  @media (max-width: 768px) {
-    padding-left: calc(var(--gutter-x) * 0.5);
-    padding-right: calc(var(--gutter-x) * 0.5);
-  }
-}
+// Custom mixin to generate container-fluid-left and container-fluid-right
+// Fluid on one side with normal max width on the other
+@mixin make-container-fluid-side-max-widths($side, $max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  margin-#{$side}: 0;
+  padding-#{$side}: 0; 
 
-// Container-right: Starts at container right edge, extends to viewport left edge
-@mixin make-container-right($gutter: $container-padding-x, $max-width: map-get($container-max-widths, 'xl')) {
-  --gutter-x: #{$gutter};
-  width: 100%;
-  padding-right: max(calc(var(--gutter-x) * 0.5), calc((100vw - #{$max-width}) / 2));
-  padding-left: 0;
-  margin-left: 0;
-  margin-right: 0;
-  
-  @media (max-width: 768px) {
-    padding-left: calc(var(--gutter-x) * 0.5);
-    padding-right: calc(var(--gutter-x) * 0.5);
+  > .row {
+    margin-#{$side}: 0;
+    
+    > [class*="col-"] {
+      padding-#{$side}: 0;
+    }
+  }
+
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-min($breakpoint, $breakpoints) {
+      max-width: calc(50% + #{$container-max-width} / 2);
+    }
   }
 }

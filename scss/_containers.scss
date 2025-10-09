@@ -7,14 +7,16 @@
   @include make-container();
 }
 
-// Container-left: Starts at container left edge, extends to viewport right edge
-.container-left {
-  @include make-container-left();
+// Container-fluid-left: Fluid on the left, aligned to container max-width on the right
+.container-fluid-left {
+  @include make-container();
+  @include make-container-fluid-side-max-widths('left');
 }
 
-// Container-right: Starts at viewport left edge, extends to container right edge
-.container-right {
-  @include make-container-right();
+// Container-fluid-right: Fluid on the right, aligned to container max-width on the left
+.container-fluid-right {
+  @include make-container();
+  @include make-container-fluid-side-max-widths('right');
 }
 
 // Responsive containers that are 100% wide until a breakpoint
