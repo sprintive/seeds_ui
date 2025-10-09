@@ -1,6 +1,7 @@
 // Container mixins
 @use "../variables" as *;
 
+// Original container mixin
 @mixin make-container($gutter: $container-padding-x) {
   --gutter-x: #{$gutter};
   --gutter-y: 0;
@@ -13,4 +14,34 @@
   ); // stylelint-disable-line function-disallowed-list
   margin-right: auto;
   margin-left: auto;
+}
+
+// Container-left: Starts at container left edge, extends to viewport right edge
+@mixin make-container-left($gutter: $container-padding-x, $max-width: map-get($container-max-widths, 'xl')) {
+  --gutter-x: #{$gutter};
+  width: 100%;
+  padding-left: max(calc(var(--gutter-x) * 0.5), calc((100vw - #{$max-width}) / 2));
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  
+  @media (max-width: 768px) {
+    padding-left: calc(var(--gutter-x) * 0.5);
+    padding-right: calc(var(--gutter-x) * 0.5);
+  }
+}
+
+// Container-right: Starts at container right edge, extends to viewport left edge
+@mixin make-container-right($gutter: $container-padding-x, $max-width: map-get($container-max-widths, 'xl')) {
+  --gutter-x: #{$gutter};
+  width: 100%;
+  padding-right: max(calc(var(--gutter-x) * 0.5), calc((100vw - #{$max-width}) / 2));
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+  
+  @media (max-width: 768px) {
+    padding-left: calc(var(--gutter-x) * 0.5);
+    padding-right: calc(var(--gutter-x) * 0.5);
+  }
 }

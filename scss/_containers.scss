@@ -7,6 +7,16 @@
   @include make-container();
 }
 
+// Container-left: Starts at container left edge, extends to viewport right edge
+.container-left {
+  @include make-container-left();
+}
+
+// Container-right: Starts at viewport left edge, extends to container right edge
+.container-right {
+  @include make-container-right();
+}
+
 // Responsive containers that are 100% wide until a breakpoint
 @each $breakpoint, $container-max-width in $container-max-widths {
   .container-#{$breakpoint} {
