@@ -211,13 +211,10 @@
         .seeds-ui-timeline-item {
           &.left {
             grid-column: 1;
-            text-align: right;
-
           }
 
           &.right {
             grid-column: 3;
-            text-align: left;
           }
 
           &:nth-child(2) {
