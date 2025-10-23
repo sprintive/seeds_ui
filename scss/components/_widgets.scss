@@ -184,19 +184,32 @@
 
       .seeds-ui-timeline-item {
         grid-column: 2;
-        margin-inline: 24px;
         grid-row: span 2;
         display: grid;
         grid-template-rows: min-content min-content min-content;
+        position: relative;
+
+        // Timeline point/dot
+        &::before {
+          content: "";
+          position: absolute;
+          left: -40px;
+          top: 8px;
+          width: 12px;
+          height: 12px;
+          background: $primary;
+          border: 3px solid $white;
+          border-radius: 50%;
+          box-shadow: 0 0 0 2px $primary;
+          z-index: 1;
+        }
 
         .seeds-ui-timeline-date {
           margin-bottom: 0.5rem;
         }
 
         .seeds-ui-timeline-content {
-          padding: 1.5rem;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin: 16px 0;
         }
       }
 
@@ -211,10 +224,20 @@
         .seeds-ui-timeline-item {
           &.left {
             grid-column: 1;
+            text-align: right;
+
+            &::before {
+              left: auto;
+              right: -39px;
+            }
           }
 
           &.right {
             grid-column: 3;
+
+            &::before {
+              left: -39px;
+            }
           }
 
           &:nth-child(2) {
