@@ -1,18 +1,17 @@
 // Utilities API
-@use "utilities/api" as *;
+@use 'utilities/api' as *;
 
 // Layout & components
-@use "reboot" as *;  // Global resets are better without namespace
-@use "containers" as *;
-@use "grid" as *;
+@use 'reboot' as *; // Global resets are better without namespace
+@use 'containers' as *;
+@use 'grid' as *;
 
 // Base styles
-@use "base/element" as *;
-@use "base/layout" as *;
-@use "base/header" as *;
-@use "base/footer" as *;
+@use 'base/element' as *;
+@use 'base/layout' as *;
+@use 'base/header' as *;
+@use 'base/footer' as *;
 
 // Components and overrides
-@use "components" as *;
-@use "override" as *;
-
+@use 'components' as *;
+@use 'override' as *;

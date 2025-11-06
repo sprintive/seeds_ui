@@ -1,0 +1,74 @@
+@use '../base' as *;
+
+// TODO: This is need to be refactored the name of the variables and move them to the mixin
+$sizes: (
+  xx-sm: 20px,
+  x-sm: 24px,
+  sm: 28px,
+  md: 32px,
+  lg: 36px,
+  x-lg: 40px,
+  xx-lg: 44px,
+);
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($color: #fff, $alpha: 0.3);
+  display: grid;
+  place-content: center;
+}
+
+.loader {
+  @each $size, $value in $sizes {
+    &.#{$size} {
+      width: $value;
+      height: $value;
+    }
+  }
+
+  background-size: contain;
+  animation: rotate 500ms linear infinite;
+  &.loader-primary {
+    background-image: url(../../images/loader-primary.svg);
+  }
+  &.neutral {
+    background-image: url(../../images/loader-neutral.svg);
+  }
+  &.on-color {
+    background-image: url(../../images/loader-on-color.svg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// TODO: Make it a component.
+.spinner-css {
+  width: 26px;
+  height: 26px;
+  border: 4px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
