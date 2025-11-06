@@ -1,5 +1,4 @@
-@use "../base" as *;
-
+@use '../base' as *;
 
 .file-container {
   width: 100%;
@@ -174,7 +173,7 @@
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         grid-column: 1;
         grid-row: 1 / span 20;
         background: $gray-300;
@@ -191,7 +190,7 @@
 
         // Timeline point/dot
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           left: -40px;
           top: 8px;
@@ -224,7 +223,6 @@
         .seeds-ui-timeline-item {
           &.left {
             grid-column: 1;
-            text-align: right;
 
             &::before {
               left: auto;
@@ -234,7 +232,6 @@
 
           &.right {
             grid-column: 3;
-
             &::before {
               left: -39px;
             }
@@ -315,7 +312,7 @@
   &[open] {
     animation: fade-in 0.3s ease-out;
   }
-  .seeds-ui-modal-close{
+  .seeds-ui-modal-close {
     position: absolute;
     right: 12px;
     top: 12px;
@@ -327,7 +324,7 @@
     font-size: 24px;
   }
   .seeds-ui-modal-header,
-  .seeds-ui-modal-body  {
+  .seeds-ui-modal-body {
     padding: 16px;
   }
 }
