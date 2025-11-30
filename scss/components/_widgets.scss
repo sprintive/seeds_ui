@@ -245,6 +245,194 @@
     }
   }
 
+  // Horizontal layout
+  &.seeds-ui-timeline--horizontal {
+    .seeds-ui-timeline__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 40px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 14px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: $gray-300;
+          z-index: 0;
+        }
+      }
+    }
+
+    .seeds-ui-timeline-item {
+      position: relative;
+      flex: 1;
+
+      @media (min-width: 768px) {
+        text-align: center;
+        padding: 0 10px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -32px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 12px;
+          height: 12px;
+          background: $primary;
+          border: 3px solid $white;
+          border-radius: 50%;
+          box-shadow: 0 0 0 2px $primary;
+          z-index: 1;
+        }
+      }
+
+      // Mobile view for horizontal (stack vertically)
+      @media (max-width: 767px) {
+        padding-left: 30px;
+        border-left: 2px solid $gray-300;
+        margin-left: 10px;
+        padding-bottom: 20px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -7px;
+          top: 0;
+          width: 12px;
+          height: 12px;
+          background: $primary;
+          border: 3px solid $white;
+          border-radius: 50%;
+          box-shadow: 0 0 0 2px $primary;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  // Marker Styles
+  &.seeds-ui-timeline--marker-number {
+    counter-reset: timeline-counter;
+
+    // Common styles with high specificity
+    &.seeds-ui-timeline--vertical .seeds-ui-timeline__inner,
+    &.seeds-ui-timeline--horizontal {
+      .seeds-ui-timeline-item::before {
+        counter-increment: timeline-counter;
+        content: counter(timeline-counter);
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 12px;
+        font-weight: bold;
+        background: $primary;
+        border: 2px solid $white;
+        border-radius: 50%;
+        box-shadow: none;
+      }
+    }
+
+    // Vertical specific positioning
+    &.seeds-ui-timeline--vertical {
+      .seeds-ui-timeline__inner {
+        .seeds-ui-timeline-item::before {
+          left: -46px;
+          top: 2px;
+        }
+        @media (min-width: 640px) {
+          .seeds-ui-timeline-item.left::before {
+            right: -45px;
+            left: auto;
+          }
+          .seeds-ui-timeline-item.right::before {
+            left: -45px;
+          }
+        }
+      }
+    }
+
+    // Horizontal specific positioning
+    &.seeds-ui-timeline--horizontal {
+      @media (min-width: 768px) {
+        .seeds-ui-timeline-item::before {
+          top: -38px;
+        }
+      }
+      @media (max-width: 767px) {
+        .seeds-ui-timeline-item::before {
+          left: -13px;
+        }
+      }
+    }
+  }
+
+  &.seeds-ui-timeline--marker-check {
+    // Common styles with high specificity
+    &.seeds-ui-timeline--vertical .seeds-ui-timeline__inner,
+    &.seeds-ui-timeline--horizontal {
+      .seeds-ui-timeline-item::before {
+        content: '✓';
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        font-size: 14px;
+        font-weight: bold;
+        background: $primary;
+        border: 2px solid $white;
+        border-radius: 50%;
+        box-shadow: none;
+      }
+    }
+
+    // Vertical specific positioning
+    &.seeds-ui-timeline--vertical {
+      .seeds-ui-timeline__inner {
+        .seeds-ui-timeline-item::before {
+          left: -46px;
+          top: 2px;
+        }
+        @media (min-width: 640px) {
+          .seeds-ui-timeline-item.left::before {
+            right: -45px;
+            left: auto;
+          }
+          .seeds-ui-timeline-item.right::before {
+            left: -45px;
+          }
+        }
+      }
+    }
+
+    // Horizontal specific positioning
+    &.seeds-ui-timeline--horizontal {
+      @media (min-width: 768px) {
+        .seeds-ui-timeline-item::before {
+          top: -38px;
+        }
+      }
+      @media (max-width: 767px) {
+        .seeds-ui-timeline-item::before {
+          left: -13px;
+        }
+      }
+    }
+  }
+
   // Animation styles
   &.seeds-ui-timeline--animate {
     .seeds-ui-timeline-item {
