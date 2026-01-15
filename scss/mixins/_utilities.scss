@@ -65,24 +65,35 @@
     $is-rtl: map-get($utility, rtl);
 
     @if $value != null {
-      @if $is-rtl == false {
-        /* rtl:begin:remove */
-      }
-
       @if $is-css-var {
         .#{$property-class + $infix + $property-class-modifier} {
+          @if $is-rtl == false {
+            /* rtl:begin:remove */
+          }
           #{$css-variable-name}: #{$value};
+          @if $is-rtl == false {
+            /* rtl:end:remove */
+          }
         }
 
         @each $pseudo in $state {
           .#{$property-class
             + $infix
             + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
+            @if $is-rtl == false {
+              /* rtl:begin:remove */
+            }
             #{$css-variable-name}: #{$value};
+            @if $is-rtl == false {
+              /* rtl:end:remove */
+            }
           }
         }
       } @else {
         .#{$property-class + $infix + $property-class-modifier} {
+          @if $is-rtl == false {
+            /* rtl:begin:remove */
+          }
           @each $property in $properties {
             @if $is-local-vars {
               @each $local-var, $variable in $is-local-vars {
@@ -92,12 +103,18 @@
             #{$property}: $value
               if($enable-important-utilities, !important, null);
           }
+          @if $is-rtl == false {
+            /* rtl:end:remove */
+          }
         }
 
         @each $pseudo in $state {
           .#{$property-class
             + $infix
             + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
+            @if $is-rtl == false {
+              /* rtl:begin:remove */
+            }
             @each $property in $properties {
               @if $is-local-vars {
                 @each $local-var, $variable in $is-local-vars {
@@ -107,12 +124,11 @@
               #{$property}: $value
                 if($enable-important-utilities, !important, null);
             }
+            @if $is-rtl == false {
+              /* rtl:end:remove */
+            }
           }
         }
-      }
-
-      @if $is-rtl == false {
-        /* rtl:end:remove */
       }
     }
   }
