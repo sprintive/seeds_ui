@@ -20,11 +20,30 @@
     img {
       transition: transform 0.3s ease;
     }
+    // Overlay: keeps absolute card content readable over the image
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      transition: opacity 0.3s ease;
+    }
     // Image Scale
     &.image-scale {
       &:hover img {
         transform: scale(1.05);
       }
+    }
+    // Opt out of the overlay
+    &.no-overlay::after {
+      content: none;
     }
   }
   // Content
@@ -38,7 +57,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 2;
   }
   // Card Elements
   .card-default-title {
